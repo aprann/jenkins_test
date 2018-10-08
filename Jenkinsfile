@@ -1,7 +1,17 @@
 //this is a comment
 
-node {
+pipeline {
 
-sh 'echo "Hello World"'
+	agent any
 
-}
+	stages {
+	
+		stage('Build')
+		steps{
+			sh "Insert your build command here"
+	   		archiveArtifacts artifacts: '*.txt' fingerprint: true
+	
+		}
+		     }
+	}
+	
