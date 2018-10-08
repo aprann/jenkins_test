@@ -4,13 +4,16 @@ pipeline {
 
 	agent any
 
+        environment {
+		
+		CC= 'clang'
+                    }
+
 	stages {
 	
-		stage('Build') {
+		stage('Example') {
 		steps{
-			echo "Insert your build command here"
-	   		archiveArtifacts artifacts: 'file*' , fingerprint: true
-	
+			sh 'printenv'
 		}
 		     }
 	}
