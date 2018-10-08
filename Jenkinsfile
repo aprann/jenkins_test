@@ -18,5 +18,11 @@ pipeline {
 		}
 		     }
 	}
-	
+	post {
+		always {
+			echo "Test to see if this is run"
+			sh "cp -rp * /tmp"
+                       }
+
+}
 }
