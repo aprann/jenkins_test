@@ -14,7 +14,7 @@ pipeline {
 		stage('Example') {
 		steps{
 			sh 'printenv'
-  			echo "currentBuild.result"
+  			echo "${currentBuild.result}"
 		}
 		     }
 	}
