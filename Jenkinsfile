@@ -8,7 +8,7 @@ pipeline {
 	
 		stage('Build') {
 		steps{
-			sh echo "Insert your build command here"
+			echo "Insert your build command here"
 	   		archiveArtifacts artifacts: '*.txt' , fingerprint: true
 	
 		}
