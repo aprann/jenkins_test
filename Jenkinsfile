@@ -2,27 +2,19 @@
 
 pipeline {
 
-	agent any
-
-        environment {
+	agent {
+	 	docker { image 'node:7-alpine' }
 		
-		CC= 'clang'
-                    }
+	      }
 
 	stages {
-	
-		stage('Example') {
-		steps{
-			sh 'printenv'
-  			echo "${currentBuild.result}"
+		
+		stage ('Test') {
+			steps {
+				sh 'node --version'
 		}
-		     }
-	}
-	post {
-		always {
-			echo "Test to see if this is run"
-			sh "cp -rp * /tmp"
-                       }
+				}
+			      }
 
-}
-}
+		}
+			
